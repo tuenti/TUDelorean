@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
+	"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>--project-name</key>
+	<string>TUDelorean</string>
+	<key>--project-version</key>
+	<string>0.9.0</string>
+	<key>--project-company</key>
+	<string>Tuenti Technologies S.L.</string>
+	<key>--company-id</key>
+	<string>com.tuenti</string>
+	<key>--repeat-first-par</key>
+	<false/>
+	<key>--create-docset</key>
+	<true/>
+	<key>--install-docset</key>
+	<true/>
+	<key>--input</key>
+	<array>
+		<string>Classes/common</string>
+	</array>
+	<key>--output</key>
+	<string>docs/</string>
+</dict>
+</plist>
