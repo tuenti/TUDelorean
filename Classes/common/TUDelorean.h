@@ -149,6 +149,16 @@ typedef void(^TUDeloreanBlock)(NSDate *date);
 /** @name Freeze time */
 
 /**
+ * Freezes the time at the actual date.
+ *
+ * The time will change to the actual date and will not advance at all.
+ *
+ * The effects of this time freeze will affect the current time until another
+ * time operation is performed.
+ */
++ (void)freeze;
+
+/**
  * Freezes the time at the given date.
  *
  * The time will change to the given date and will not advance at all.
