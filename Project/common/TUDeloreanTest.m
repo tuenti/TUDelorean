@@ -193,6 +193,7 @@
 {
 	[TUDelorean freeze:_enchantmentUnderTheSeaDance];
 	STAssertEqualObjects([NSDate date], _enchantmentUnderTheSeaDance, @"now should be exactly the Enchantment Under The See Dance");
+	STAssertEquals([NSDate timeIntervalSinceReferenceDate], [_enchantmentUnderTheSeaDance timeIntervalSinceReferenceDate], @"time interval since reference date should be exactly same as for the Enchantment Under The See Dance");
 }
 
 - (void)test_freeze_should_kept_the_last_frozen_time
@@ -200,6 +201,7 @@
 	[TUDelorean freeze:_enchantmentUnderTheSeaDance];
 	[TUDelorean freeze:_clockTowerInauguration];
 	STAssertEqualObjects([NSDate date], _clockTowerInauguration, @"now should be exactly the Clock Tower Inauguration");
+	STAssertEquals([NSDate timeIntervalSinceReferenceDate], [_clockTowerInauguration timeIntervalSinceReferenceDate], @"time interval since reference date should be exactly same as for the Clock Tower Inauguration");
 }
 
 - (void)test_freezeBlock_should_travel_back_in_time

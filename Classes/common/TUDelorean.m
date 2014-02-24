@@ -61,6 +61,7 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 
 + (instancetype)delorean_date;
 + (instancetype)delorean_dateWithTimeIntervalSinceNow:(NSTimeInterval)secs;
++ (NSTimeInterval)delorean_timeIntervalSinceReferenceDate;
 
 - (instancetype)delorean_init __attribute__((objc_method_family(init)));
 - (instancetype)delorean_initWithTimeIntervalSinceNow:(NSTimeInterval)secs  __attribute__((objc_method_family(init)));
@@ -114,6 +115,11 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 + (void)jump:(NSTimeInterval)timeInterval block:(TUDeloreanBlock)block
 {
 	[[self sharedDelorean] jump:timeInterval block:block];
+}
+
++ (void)freeze
+{
+	[self freeze:[NSDate date]];
 }
 
 + (void)freeze:(NSDate *)date
@@ -233,6 +239,9 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 	TUSwizzleClassMethods(dateClass,
 						  @selector(dateWithTimeIntervalSinceNow:),
 						  @selector(delorean_dateWithTimeIntervalSinceNow:));
+	TUSwizzleClassMethods(dateClass,
+						  @selector(timeIntervalSinceReferenceDate),
+						  @selector(delorean_timeIntervalSinceReferenceDate));
 }
 
 @end
@@ -286,6 +295,19 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 + (instancetype)delorean_dateWithTimeIntervalSinceNow:(NSTimeInterval)secs
 {
 	return [[self alloc] initWithTimeIntervalSinceNow:secs];
+}
+
++ (NSTimeInterval)delorean_timeIntervalSinceReferenceDate
+{
+	TUTimeJump *timeJump = [[TUDelorean sharedDelorean] topTimeJump];
+	if (timeJump != nil)
+	{
+		return [[timeJump now] timeIntervalSinceReferenceDate];
+	}
+	else
+	{
+		return [self delorean_timeIntervalSinceReferenceDate];
+	}
 }
 
 - (instancetype)delorean_init
