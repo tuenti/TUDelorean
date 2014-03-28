@@ -251,6 +251,7 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 
 - (instancetype)initWithType:(TUTimeJumpType)type date:(NSDate *)date
 {
+	NSAssert(date, @"Can't create a time jump with a nil date");
 	if ((self = [super init]))
 	{
 		_type = type;
