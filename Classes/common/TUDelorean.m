@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 @property (nonatomic, strong, readonly) NSDate *date;
 @property (nonatomic, assign, readonly) NSTimeInterval offset;
 
-- (id)initWithType:(TUTimeJumpType)type date:(NSDate *)date;
+- (instancetype)initWithType:(TUTimeJumpType)type date:(NSDate *)date;
 
 - (NSDate *)now;
 
@@ -137,7 +137,7 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 	[[self sharedDelorean] backToThePresent];
 }
 
-- (id)init
+- (instancetype)init
 {
 	if ((self = [super init]))
 	{
@@ -249,8 +249,9 @@ typedef NS_ENUM(NSUInteger, TUTimeJumpType)
 
 @implementation TUTimeJump
 
-- (id)initWithType:(TUTimeJumpType)type date:(NSDate *)date
+- (instancetype)initWithType:(TUTimeJumpType)type date:(NSDate *)date
 {
+    NSParameterAssert(date != nil);
 	if ((self = [super init]))
 	{
 		_type = type;
