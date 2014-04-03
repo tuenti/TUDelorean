@@ -4,6 +4,8 @@
 >
 > Doc:  “Yes, the way I see it, if you’re gonna build a time machine into a car, why not do it with some style?”
 
+[![Build Status](https://travis-ci.org/vcorugedo/TUDelorean.svg?branch=master)](https://travis-ci.org/vcorugedo/TUDelorean)
+
 A DeLorean helps you test your time-dependent code allowing you travel anywhere
 in time.
 
