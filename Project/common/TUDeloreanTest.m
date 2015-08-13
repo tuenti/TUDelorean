@@ -18,7 +18,7 @@
 //
 
 #import "TUDelorean.h"
-
+#import <XCTest/XCTest.h>
 #import <SenTestingKit/SenTestingKit.h>
 
 #define TUPASTE(x, y) x ## y
@@ -26,10 +26,10 @@
 #define TUAssertDateEquals(obtained, expected, description) \
 	NSTimeInterval TUPASTE2(expectedInterval, __LINE__) = [(expected) timeIntervalSinceReferenceDate]; \
 	NSTimeInterval TUPASTE2(obtainedInterval, __LINE__) = [(obtained) timeIntervalSinceReferenceDate]; \
-	STAssertEqualsWithAccuracy(TUPASTE2(obtainedInterval, __LINE__), TUPASTE2(expectedInterval, __LINE__), 1.0, description);
+	XCTAssertEqualWithAccuracy(TUPASTE2(obtainedInterval, __LINE__), TUPASTE2(expectedInterval, __LINE__), 1.0, description);
 
 
-@interface TUDeloreanTest : SenTestCase
+@interface TUDeloreanTest : XCTestCase
 @end
 
 @implementation TUDeloreanTest
@@ -192,23 +192,23 @@
 - (void)test_freeze_should_freeze_time
 {
 	[TUDelorean freeze:_enchantmentUnderTheSeaDance];
-	STAssertEqualObjects([NSDate date], _enchantmentUnderTheSeaDance, @"now should be exactly the Enchantment Under The See Dance");
-	STAssertEquals([NSDate timeIntervalSinceReferenceDate], [_enchantmentUnderTheSeaDance timeIntervalSinceReferenceDate], @"time interval since reference date should be exactly same as for the Enchantment Under The See Dance");
+	XCTAssertEqualObjects([NSDate date], _enchantmentUnderTheSeaDance, @"now should be exactly the Enchantment Under The See Dance");
+	XCTAssertEqual([NSDate timeIntervalSinceReferenceDate], [_enchantmentUnderTheSeaDance timeIntervalSinceReferenceDate], @"time interval since reference date should be exactly same as for the Enchantment Under The See Dance");
 }
 
 - (void)test_freeze_should_kept_the_last_frozen_time
 {
 	[TUDelorean freeze:_enchantmentUnderTheSeaDance];
 	[TUDelorean freeze:_clockTowerInauguration];
-	STAssertEqualObjects([NSDate date], _clockTowerInauguration, @"now should be exactly the Clock Tower Inauguration");
-	STAssertEquals([NSDate timeIntervalSinceReferenceDate], [_clockTowerInauguration timeIntervalSinceReferenceDate], @"time interval since reference date should be exactly same as for the Clock Tower Inauguration");
+	XCTAssertEqualObjects([NSDate date], _clockTowerInauguration, @"now should be exactly the Clock Tower Inauguration");
+	XCTAssertEqual([NSDate timeIntervalSinceReferenceDate], [_clockTowerInauguration timeIntervalSinceReferenceDate], @"time interval since reference date should be exactly same as for the Clock Tower Inauguration");
 }
 
 - (void)test_freezeBlock_should_travel_back_in_time
 {
 	NSDate *today = [NSDate date];
 	[TUDelorean freeze:_jaws19Premiere block:^(NSDate *date) {
-		STAssertEqualObjects(date, _jaws19Premiere, @"now should be exactly the Jaws 19 Premiere");
+		XCTAssertEqualObjects(date, _jaws19Premiere, @"now should be exactly the Jaws 19 Premiere");
 	}];
 	TUAssertDateEquals([[NSDate alloc] init], today, @"now should be the present");
 }
@@ -216,9 +216,9 @@
 - (void)test_freezeBlock_should_nest_correctly_several_freezes
 {
 	[TUDelorean freeze:_jaws19Premiere block:^(NSDate *date1) {
-		STAssertEqualObjects(date1, _jaws19Premiere, @"now should be exactly the Jaws 19 Premiere");
+		XCTAssertEqualObjects(date1, _jaws19Premiere, @"now should be exactly the Jaws 19 Premiere");
 		[TUDelorean freeze:_enchantmentUnderTheSeaDance block:^(NSDate *date2) {
-			STAssertEqualObjects(date2, _enchantmentUnderTheSeaDance, @"now should be exactly the Enchantment Under The Sea Dance");
+			XCTAssertEqualObjects(date2, _enchantmentUnderTheSeaDance, @"now should be exactly the Enchantment Under The Sea Dance");
 		}];
 	}];
 }
