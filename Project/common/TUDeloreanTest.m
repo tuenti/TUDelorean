@@ -19,7 +19,6 @@
 
 #import "TUDelorean.h"
 #import <XCTest/XCTest.h>
-#import <SenTestingKit/SenTestingKit.h>
 
 #define TUPASTE(x, y) x ## y
 #define TUPASTE2(x, y) TUPASTE(x, y)
@@ -42,7 +41,7 @@
 
 - (void)setUp
 {
-	_calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	_calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 
 	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
 

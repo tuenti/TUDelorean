@@ -834,6 +834,7 @@
 				);
 				INFOPLIST_FILE = Delorean/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -854,6 +855,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Delorean/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1086,6 +1088,7 @@
 				05759C091B7C93AE00918889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05759C0A1B7C93AE00918889 /* Build configuration list for PBXNativeTarget "DeloreanTests" */ = {
 			isa = XCConfigurationList;
@@ -1094,6 +1097,7 @@
 				05759C0C1B7C93AE00918889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05759C221B7C93CB00918889 /* Build configuration list for PBXNativeTarget "TUDelorean-OSX" */ = {
 			isa = XCConfigurationList;
@@ -1102,6 +1106,7 @@
 				05759C241B7C93CB00918889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05759C251B7C93CB00918889 /* Build configuration list for PBXNativeTarget "TUDelorean-OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -1110,6 +1115,7 @@
 				05759C271B7C93CB00918889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05759C401B7C941200918889 /* Build configuration list for PBXNativeTarget "Delorean-OSX" */ = {
 			isa = XCConfigurationList;
@@ -1118,6 +1124,7 @@
 				05759C421B7C941200918889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05759C431B7C941200918889 /* Build configuration list for PBXNativeTarget "Delorean-OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -1126,6 +1133,7 @@
 				05759C451B7C941200918889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

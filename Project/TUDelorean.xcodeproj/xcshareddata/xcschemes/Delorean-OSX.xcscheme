@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "05759C2C1B7C941200918889"
-               BuildableName = "Delorean-OSX.framework"
+               BuildableName = "Delorean.framework"
                BlueprintName = "Delorean-OSX"
                ReferencedContainer = "container:TUDelorean.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "05759C2C1B7C941200918889"
-            BuildableName = "Delorean-OSX.framework"
+            BuildableName = "Delorean.framework"
             BlueprintName = "Delorean-OSX"
             ReferencedContainer = "container:TUDelorean.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "05759C2C1B7C941200918889"
-            BuildableName = "Delorean-OSX.framework"
+            BuildableName = "Delorean.framework"
             BlueprintName = "Delorean-OSX"
             ReferencedContainer = "container:TUDelorean.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "05759C2C1B7C941200918889"
-            BuildableName = "Delorean-OSX.framework"
+            BuildableName = "Delorean.framework"
             BlueprintName = "Delorean-OSX"
             ReferencedContainer = "container:TUDelorean.xcodeproj">
          </BuildableReference>
