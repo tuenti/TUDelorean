@@ -5,6 +5,7 @@
 > Doc:  “Yes, the way I see it, if you’re gonna build a time machine into a car, why not do it with some style?”
 
 [![Build Status](https://travis-ci.org/vcorugedo/TUDelorean.svg?branch=master)](https://travis-ci.org/vcorugedo/TUDelorean)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 A DeLorean helps you test your time-dependent code allowing you travel anywhere
 in time.
@@ -28,6 +29,14 @@ production code.
    pod 'TUDelorean', :git => 'https://github.com/tuenti/TUDelorean'
    ```
 2. Run `pod install`
+
+#### Using Carthage
+
+1. Add the following to your `CartFile.private`:
+   ```
+   github "taiheng/TUDelorean"
+   ```
+2. Run `carthage bootstrap` if installing project dependencies for the first time or `carthage update` if carthage has already installed other dependencies.
 
 #### Manually
 
