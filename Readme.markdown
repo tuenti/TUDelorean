@@ -30,6 +30,14 @@ production code.
    ```
 2. Run `pod install`
 
+#### Using Carthage
+
+1. Add the following to your `CartFile.private`:
+   ```
+   github "taiheng/TUDelorean"
+   ```
+2. Run `carthage bootstrap` if installing project dependencies for the first time or `carthage update` if carthage has already installed other dependencies.
+
 #### Manually
 
 1. Clone, add as a submodule or [download](https://github.com/tuenti/TUDelorean/zipball/master) TUDelorean.
