@@ -50,6 +50,7 @@ tests and also the testing rig.
 - (void)tearDown
 {
     [TUDelorean backToThePresent];
+    [super tearDown];
 }
 ```
 
